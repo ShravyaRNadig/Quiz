@@ -1,0 +1,15 @@
+<div class="container" *ngIf="quiz">
+  <h1>{{ quiz.title }}</h1>
+  <p><strong>Description:</strong> {{ quiz.description }}</p>
+
+  <h3>Questions</h3>
+  <div *ngFor="let question of quiz.questions; let i = index">
+    <h5>Question {{ i + 1 }}: {{ question.text }}</h5>
+    <p><strong>Options:</strong></p>
+    <ul>
+      <li *ngFor="let option of question.options">{{ option }}</li>
+    </ul>
+  </div>
+
+  <button class="btn btn-secondary" (click)="navigateToList()">Back to List</button>
+</div>
